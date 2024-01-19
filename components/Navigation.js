@@ -4,9 +4,7 @@ import Link from "next/link";
 import logo from "@/public/assets/logo.svg";
 import pattern from "@/public/assets/bg-tablet-pattern.svg";
 
-import { AiOutlineSearch } from "react-icons/ai";
-import { FaShoppingCart } from "react-icons/fa";
-import { BiSolidUser, BiMenuAltRight } from "react-icons/bi";
+import { BiMenuAltRight } from "react-icons/bi";
 import { LiaTimesSolid } from "react-icons/lia";
 import Image from "next/image";
 
@@ -53,7 +51,6 @@ const Navigation = () => {
         <Image src={pattern} alt="Pattern" width={600} height={200} />
       </div>
       <nav className="flex justify-between items-center px-6 py-4">
-        {/* LOGO */}
         {/* LOGO */}
         <Image src={logo} alt="Manage logo" />
 

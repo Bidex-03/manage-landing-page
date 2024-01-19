@@ -55,12 +55,12 @@ const Main = () => {
           <div className="md:w-[80%] text-darkGrayishBlue">
             {/* 01 */}
             <div className="my-4">
-              <div className="flex gap-8 text-primaryBlue font-semibold items-center bg-veryPaleRed rounded-full w-screen md:bg-[#fff] md:rounded-none md:w-full">
+              <div className="flex gap-4 md:gap-8 text-primaryBlue font-semibold items-center bg-veryPaleRed rounded-full md:bg-transparent md:rounded-none md:w-full">
                 <p className="py-2 px-6 items-center bg-primaryRed text-veryLightGray rounded-full">
                   01
                 </p>
 
-                <h3 className="text-lg">Track Company-wide progress</h3>
+                <h3 className="text-[15px] md:text-lg">Track Company-wide progress</h3>
               </div>
 
               <div className="mt-4">
@@ -73,12 +73,12 @@ const Main = () => {
 
             {/* 02 */}
             <div className="my-4">
-              <div className="flex gap-8 text-primaryBlue font-semibold items-center bg-veryPaleRed rounded-full w-screen md:bg-[#fff] md:rounded-none md:w-full">
+              <div className="flex gap-4 md:gap-8 text-primaryBlue font-semibold items-center bg-veryPaleRed rounded-full md:bg-transparent md:rounded-none md:w-full">
                 <p className="py-2 px-6 items-center bg-primaryRed text-veryLightGray rounded-full">
                   02
                 </p>
 
-                <h3>Advanced built-in reports</h3>
+                <h3 className="md:text-lg">Advanced built-in reports</h3>
               </div>
 
               <div className="mt-4">
@@ -90,12 +90,12 @@ const Main = () => {
 
             {/* 03 */}
             <div className="my-4">
-              <div className="flex gap-8 text-primaryBlue font-semibold items-center bg-veryPaleRed rounded-full w-screen md:bg-[#fff] md:rounded-none md:w-full">
+              <div className="flex gap-2 md:gap-8 text-primaryBlue font-semibold items-center bg-veryPaleRed md:bg-transparent rounded-full md:rounded-none md:w-full">
                 <p className="py-2 px-6 items-center bg-primaryRed text-veryLightGray rounded-full">
                   03
                 </p>
 
-                <h3>Everything you need in one place</h3>
+                <h3 className="text-[14px] md:text-lg">Everything you need in one place</h3>
               </div>
 
               <div className="mt-4">
@@ -108,22 +108,28 @@ const Main = () => {
         </section>
 
         {/* PATTERN ICON */}
-        <div className="hidden md:block md:top-[120%] md:-left-40 absolute opacity-95 -z-[100]">
-          <Image src={pattern} alt="Pattern" width={500} />
-        </div>
-
-        {/* 3RD SECTION */}
-        <section className="bg-primaryRed flex flex-col md:flex-row justify-around py-16 items-center">
-          <div className="w-[45%] md:w-[30%] text-2xl mb-4 md:text-3xl text-center md:text-start text-veryLightGray font-semibold">
-            Simplify how your team works today.
+        <section className="relative overflow-hidden">
+          <div className="absolute -left-[95%] md:left-[15%] md:-top-8 opacity-15">
+            <Image src={pattern} alt="Pattern" width={450} />
           </div>
 
-          <Link
-            href="/"
-            className="text-xl font-semibold px-6 py-2 rounded-full bg-veryLightGray text-primaryRed"
-          >
-            Get Started
-          </Link>
+          <div className="hidden md:block absolute -right-[12%] bottom-20 opacity-15">
+            <Image src={pattern} alt="Pattern" width={450} />
+          </div>
+
+          {/* 3RD SECTION -- GET STARTED CTA */}
+          <section className="bg-primaryRed flex flex-col md:flex-row justify-around py-16 items-center">
+            <div className="w-[45%] md:w-[30%] text-2xl mb-4 md:text-3xl text-center md:text-start text-veryLightGray font-semibold">
+              Simplify how your team works today.
+            </div>
+
+            <Link
+              href="/"
+              className="text-xl font-semibold px-6 py-2 rounded-full bg-veryLightGray text-primaryRed"
+            >
+              Get Started
+            </Link>
+          </section>
         </section>
       </main>
     </>
