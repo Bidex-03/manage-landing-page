@@ -42,7 +42,7 @@ const Main = () => {
             <h2
               className={`${vietnam.className} bg-inherit text-4xl md:text-5xl font-semibold text-primaryBlue`}
             >
-              What's different about Manage?
+              What&apos;s different about Manage?
             </h2>
             <p className="text-darkGrayishBlue md:text-2xl md:w-[80%] my-[1rem] md:my-[3rem]">
               Manage provides all the functionality your team needs, without the
