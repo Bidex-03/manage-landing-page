@@ -2,8 +2,13 @@ import Link from "next/link";
 import { Be_Vietnam_Pro } from "next/font/google";
 import illustration from "@/public/assets/illustration-intro.svg";
 import Image from "next/image";
+import { useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import pattern from "@/public/assets/bg-tablet-pattern.svg";
+import { testimonials } from "./testimonials";
 
 const vietnam = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -11,6 +16,24 @@ const vietnam = Be_Vietnam_Pro({
 });
 
 const Main = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <main>
@@ -60,7 +83,9 @@ const Main = () => {
                   01
                 </p>
 
-                <h3 className="text-[15px] md:text-lg">Track Company-wide progress</h3>
+                <h3 className="text-[15px] md:text-lg">
+                  Track Company-wide progress
+                </h3>
               </div>
 
               <div className="mt-4">
@@ -95,7 +120,9 @@ const Main = () => {
                   03
                 </p>
 
-                <h3 className="text-[14px] md:text-lg">Everything you need in one place</h3>
+                <h3 className="text-[14px] md:text-lg">
+                  Everything you need in one place
+                </h3>
               </div>
 
               <div className="mt-4">
@@ -105,6 +132,38 @@ const Main = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* TESTIMONIAL */}
+        <section className="my-10">
+          <h2
+            className={`${vietnam.className} bg-inherit text-4xl md:text-5xl font-semibold text-primaryBlue flex justify-center my-4`}
+          >
+            What they&apos;ve said
+          </h2>
+          <Slider {...settings}>
+            {testimonials.map((testimonial) => {
+              return (
+                <div key={testimonial.id} /*className="bg-emerald-500"*/>
+                  <div className="bg-veryLightGray mx-5 flex flex-col items-center p-7 h-60">
+                    <div className="flex items-center w-[20%]">
+                      <Image
+                        src={testimonial.img}
+                        alt={testimonial.name}
+                        // className="-top-10 absolute z-0"
+                      />
+                    </div>
+
+                    <h2 className="text-primaryBlue font-bold">
+                      {testimonial.name}
+                    </h2>
+
+                    <p>{testimonial.message}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </Slider>
         </section>
 
         {/* PATTERN ICON */}
