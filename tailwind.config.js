@@ -4,7 +4,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
- 
+
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -17,8 +17,14 @@ module.exports = {
         veryDarkBlue: "hsl(233, 12%, 13%)",
         veryPaleRed: "hsl(13, 100%, 96%)",
         veryLightGray: "hsl(0, 0%, 98%)",
-      }
+      },
+      dropShadow: {
+        primaryRed: "0 10px 13px hsl(12, 88%, 59%)",
+      },
+      boxShadow: {
+        primaryRed: "0 10px 20px -5px hsl(12, 88%, 59%)",
+      },
     },
   },
   plugins: [],
-}
+};

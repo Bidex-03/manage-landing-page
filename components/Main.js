@@ -17,7 +17,7 @@ const vietnam = Be_Vietnam_Pro({
 
 const Main = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -28,6 +28,7 @@ const Main = () => {
       {
         breakpoint: 768,
         settings: {
+          dots: true,
           slidesToShow: 1,
         },
       },
@@ -135,35 +136,47 @@ const Main = () => {
         </section>
 
         {/* TESTIMONIAL */}
-        <section className="my-10">
+        <section className="my-10 w-[95%] mx-auto">
           <h2
-            className={`${vietnam.className} bg-inherit text-4xl md:text-5xl font-semibold text-primaryBlue flex justify-center my-4`}
+            className={`${vietnam.className} bg-inherit text-3xl md:text-5xl font-semibold text-primaryBlue flex justify-center my-4`}
           >
             What they&apos;ve said
           </h2>
-          <Slider {...settings}>
+
+          <Slider {...settings} className="">
             {testimonials.map((testimonial) => {
               return (
-                <div key={testimonial.id} /*className="bg-emerald-500"*/>
-                  <div className="bg-veryLightGray mx-5 flex flex-col items-center p-7 h-60">
-                    <div className="flex items-center w-[20%]">
+                <div key={testimonial.id} className="pt-6 md:pt-10">
+                  <div className="bg-veryLightGray relative z-0 shadow rounded-lg h-60 mx-3">
+                    <div className="flex justify-center">
                       <Image
                         src={testimonial.img}
                         alt={testimonial.name}
-                        // className="-top-10 absolute z-0"
+                        className="mx-auto absolute -top-[20px] md:-top-[30px] z-10 w-[15%]"
                       />
                     </div>
+                    <div className="mt-10 md:mt-14">
+                      <h2 className="text-primaryBlue font-bold text-center">
+                        {testimonial.name}
+                      </h2>
 
-                    <h2 className="text-primaryBlue font-bold">
-                      {testimonial.name}
-                    </h2>
-
-                    <p>{testimonial.message}</p>
+                      <p
+                        className={`${vietnam.className} text-center text-darkGrayishBlue mt-2 text-md md:text-sm px-4`}
+                      >
+                        &quot;{testimonial.message}&quot;
+                      </p>
+                    </div>
                   </div>
                 </div>
               );
             })}
           </Slider>
+
+          <div className="w-full text-center mt-10">
+            <button className="mx-auto bg-primaryRed text-veryLightGray font-semibold px-8 py-3 rounded-full shadow-primaryRed outline-none">
+              Get Started
+            </button>
+          </div>
         </section>
 
         {/* PATTERN ICON */}
