@@ -18,12 +18,13 @@ const Main = () => {
   // REACT-SLICK LIBRARY FOR CAROUSELS
   const settings = {
     dots: false,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    // autoplay: true,
+    // autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 768,
@@ -39,7 +40,7 @@ const Main = () => {
     <>
       <main>
         {/* 1ST SECTION */}
-        <section className="flex flex-col-reverse md:flex gap-20 md:flex-row items-center w-screen px-10">
+        <section className="flex flex-col-reverse md:flex gap-20 md:flex-row items-center px-10">
           {/* MANAGE PURPOSE */}
           <div className="md:w-[50%] text-center md:text-start">
             <h2
@@ -74,9 +75,9 @@ const Main = () => {
           </div>
 
           {/* MOBILE */}
-          <div className="md:hidden md:hidden absolute -top-[30%] -right-[75%] z-[-100]">
+          {/* <div className="md:hidden md:hidden absolute -top-[30%] -right-[75%] z-[-100]">
             <Image src={pattern} alt="Pattern" width={450} />
-          </div>
+          </div> */}
 
           {/* HOW MANAGE IS DIFFERENCE */}
           <div className="text-center md:text-start mt-[10rem] md:mt-0">
@@ -153,7 +154,7 @@ const Main = () => {
         </section>
 
         {/* TESTIMONIAL */}
-        <section className="my-10 mx-auto relative">
+        <section className="my-10 mx:w-[95%] mx-auto relative">
           {/* PATTERN AT TESTIMONIES SECTION */}
           {/* <div className="hidden md:block absolute -top-[40%] -left-[15%]">
             <Image src={pattern} alt="Pattern" width={450} />
