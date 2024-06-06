@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Be_Vietnam_Pro } from "next/font/google";
 import illustration from "@/public/assets/illustration-intro.svg";
 import Image from "next/image";
-import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,6 +15,7 @@ const vietnam = Be_Vietnam_Pro({
 });
 
 const Main = () => {
+  // REACT-SLICK LIBRARY FOR CAROUSELS
   const settings = {
     dots: false,
     infinite: true,
@@ -51,6 +51,12 @@ const Main = () => {
               Manage makes it simple for software teams to plan day-to-day tasks
               while keeping the target team goals in view.
             </p>
+
+            <div className="block md:hidden w-full text-center mt-20">
+              <button className="mx-auto bg-primaryRed text-veryLightGray font-semibold px-8 py-3 rounded-full shadow-primaryRed outline-none">
+                Get Started
+              </button>
+            </div>
           </div>
 
           {/* MANAGE IMAGE */}
@@ -60,9 +66,20 @@ const Main = () => {
         </section>
 
         {/* 2ND SECTION */}
-        <section className="px-10 flex flex-col md:flex-row md:gap-8 mt-8 md:mt-0">
+        <section className="px-10 flex flex-col md:flex-row md:gap-8 mt-8 md:mt-0 relative">
+          {/* 2ND SECTION PATTERN */}
+          {/* DESKTOP */}
+          <div className="hidden md:block absolute md:top-[60%] md:-left-[20%] z-[-100]">
+            <Image src={pattern} alt="Pattern" width={450} />
+          </div>
+
+          {/* MOBILE */}
+          <div className="md:hidden md:hidden absolute -top-[30%] -right-[75%] z-[-100]">
+            <Image src={pattern} alt="Pattern" width={450} />
+          </div>
+
           {/* HOW MANAGE IS DIFFERENCE */}
-          <div className="text-center md:text-start">
+          <div className="text-center md:text-start mt-[10rem] md:mt-0">
             <h2
               className={`${vietnam.className} bg-inherit text-4xl md:text-5xl font-semibold text-primaryBlue`}
             >
@@ -136,18 +153,23 @@ const Main = () => {
         </section>
 
         {/* TESTIMONIAL */}
-        <section className="my-10 w-[95%] mx-auto">
+        <section className="my-10 mx-auto relative">
+          {/* PATTERN AT TESTIMONIES SECTION */}
+          {/* <div className="hidden md:block absolute -top-[40%] -left-[15%]">
+            <Image src={pattern} alt="Pattern" width={450} />
+          </div> */}
+
           <h2
             className={`${vietnam.className} bg-inherit text-3xl md:text-5xl font-semibold text-primaryBlue flex justify-center my-4`}
           >
             What they&apos;ve said
           </h2>
 
-          <Slider {...settings} className="">
+          <Slider {...settings}>
             {testimonials.map((testimonial) => {
               return (
                 <div key={testimonial.id} className="pt-6 md:pt-10">
-                  <div className="bg-veryLightGray relative z-0 shadow rounded-lg h-60 mx-3">
+                  <div className="bg-veryLightGray relative z-0 rounded-lg h-60 mx-3 md:mx-0 md:mr-3">
                     <div className="flex justify-center">
                       <Image
                         src={testimonial.img}
@@ -172,14 +194,14 @@ const Main = () => {
             })}
           </Slider>
 
-          <div className="w-full text-center mt-10">
+          <div className="w-full text-center mt-20">
             <button className="mx-auto bg-primaryRed text-veryLightGray font-semibold px-8 py-3 rounded-full shadow-primaryRed outline-none">
               Get Started
             </button>
           </div>
         </section>
 
-        {/* PATTERN ICON */}
+        {/* PATTERN AT CTA SECTION ICON */}
         <section className="relative overflow-hidden">
           <div className="absolute -left-[95%] md:left-[15%] md:-top-8 opacity-15">
             <Image src={pattern} alt="Pattern" width={450} />
