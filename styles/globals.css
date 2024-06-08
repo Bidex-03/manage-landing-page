@@ -4,6 +4,7 @@
 
 .slick-dots li.slick-active button:before {
   color: hsl(12, 88%, 59%) !important;
+  border: 1px solid #fff
 }
 
 .slick-dots li button:before {

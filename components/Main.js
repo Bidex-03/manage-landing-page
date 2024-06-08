@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import pattern from "@/public/assets/bg-tablet-pattern.svg";
-import { testimonials } from "./testimonials";
+import { testimonies } from "./testimonies";
 
 const vietnam = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -23,8 +23,8 @@ const Main = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    // autoplay: true,
-    // autoplaySpeed: 3000,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 768,
@@ -153,13 +153,8 @@ const Main = () => {
           </div>
         </section>
 
-        {/* TESTIMONIAL */}
+        {/* TESTIMONIES */}
         <section className="my-10 mx:w-[95%] mx-auto relative">
-          {/* PATTERN AT TESTIMONIES SECTION */}
-          {/* <div className="hidden md:block absolute -top-[40%] -left-[15%]">
-            <Image src={pattern} alt="Pattern" width={450} />
-          </div> */}
-
           <h2
             className={`${vietnam.className} bg-inherit text-3xl md:text-5xl font-semibold text-primaryBlue flex justify-center my-4`}
           >
@@ -167,26 +162,26 @@ const Main = () => {
           </h2>
 
           <Slider {...settings}>
-            {testimonials.map((testimonial) => {
+            {testimonies.map((testimony) => {
               return (
-                <div key={testimonial.id} className="pt-6 md:pt-10">
+                <div key={testimony.id} className="pt-6 md:pt-10">
                   <div className="bg-veryLightGray relative z-0 rounded-lg h-60 mx-3 md:mx-0 md:mr-3">
                     <div className="flex justify-center">
                       <Image
-                        src={testimonial.img}
-                        alt={testimonial.name}
+                        src={testimony.img}
+                        alt={testimony.name}
                         className="mx-auto absolute -top-[20px] md:-top-[30px] z-10 w-[15%]"
                       />
                     </div>
                     <div className="mt-10 md:mt-14">
                       <h2 className="text-primaryBlue font-bold text-center">
-                        {testimonial.name}
+                        {testimony.name}
                       </h2>
 
                       <p
                         className={`${vietnam.className} text-center text-darkGrayishBlue mt-2 text-md md:text-sm px-4`}
                       >
-                        &quot;{testimonial.message}&quot;
+                        &quot;{testimony.message}&quot;
                       </p>
                     </div>
                   </div>

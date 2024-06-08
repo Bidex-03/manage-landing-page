@@ -3,7 +3,7 @@ import Anisha from "@/public/assets/avatar-anisha.png";
 import Richard from "@/public/assets/avatar-richard.png";
 import Shanai from "@/public/assets/avatar-shanai.png";
 
-export const testimonials = [
+export const testimonies = [
   {
     img: Anisha,
     name: "Anisha Li",
